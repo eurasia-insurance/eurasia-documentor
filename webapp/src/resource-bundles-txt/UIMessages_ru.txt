@@ -1,0 +1,15 @@
+# global names
+name.company-short = СК Евразия
+name.company-full = Страховая компания Евразия
+name.site = Евразия 36
+
+# commands
+command.upload-cancel = Отмена
+command.upload-begin = Начать загрузку
+command.upload-choose = Выбрать файлы
+
+# labels
+label.id-number = Ваш ИИН
+
+# placeholders
+placeholder.id-number = Введите Ваш ИИН

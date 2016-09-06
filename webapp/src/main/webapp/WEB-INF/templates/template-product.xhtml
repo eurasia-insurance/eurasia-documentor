@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets" template="design.xhtml">
+
+	<ui:param name="productclass" value="product-#{producttag}" />
+
+	<ui:define name="main-content">
+		<ui:decorate
+			template="/WEB-INF/templates/main-menu_#{currentLanguageService.language.tag}.include.xhtml">
+			<ui:define name="policy-selector">
+				<ui:insert name="policy-selector" />
+			</ui:define>
+		</ui:decorate>
+		<div class="content">
+			<ui:insert name="product-conditions" />
+			<div class="insurance-form container-fluid" ng-hide="condstumb">
+				<h:panelGroup id="pageContentWrapper">
+					<ui:insert name="page-content" />
+				</h:panelGroup>
+			</div>
+		</div>
+	</ui:define>
+
+</ui:composition>

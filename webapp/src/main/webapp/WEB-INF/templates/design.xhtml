@@ -1,0 +1,84 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:comp="http://xmlns.jcp.org/jsf/composite"
+	xmlns:p="http://primefaces.org/ui">
+<f:view locale="#{currentLanguageService.locale}">
+	<h:head>
+		<title><ui:insert name="page-title" /></title>
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="keywords"
+			content="полис ос гпо втс купить онлайн евразия евразия36 страховка авто страхование каско автокаско ущерб угон пожар оплтатить картой" />
+		<meta name="description"
+			content="Евразия36 интернет-маркет страховых продуктов Страховой компании Евразия, на страницах которого Вы можете выбрать интересующую Вас страховую услугу, расчитать стоимость и оформить и оплатить заказ онлайн" />
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="content-language"
+			content="#{currentLanguageService.language.tag}" />
+		<meta name="robots" content="noindex, follow" />
+		<meta name="copyright"
+			content="Все права Акцонерное общество &quot;Страховая компания &quot;Евразия&quot;" />
+		<link type="text/css" rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&amp;subset=latin,cyrillic" />
+		<link type="text/css" rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic&amp;subset=latin,cyrillic" />
+		<link type="text/css" rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic" />
+		<link rel="icon" type="image/png"
+			href="#{resource['favicon/favicon.png']}" />
+		<link rel="apple-touch-icon"
+			href="#{resource['favicon/apple-touch-favicon.png']}" />
+		<h:outputStylesheet library="font-awesome" name="font-awesome.min.css" />
+		<h:outputStylesheet library="css" name="style.css"
+			rendered="#{facesContext.application.projectStage eq 'Development'}" />
+		<h:outputStylesheet library="css" name="style.min.css"
+			rendered="#{facesContext.application.projectStage eq 'Production'}" />
+		<h:outputScript library="js" name="primefaces-utils.js" />
+	</h:head>
+	<h:body ng-controller="main">
+		<ui:decorate template="debug.include.xhtml" />
+		<ui:decorate
+			template="/WEB-INF/templates/ajax-exception-handler.include.xhtml" />
+
+		<!-- >> bodyWrapper -->
+		<h:panelGroup id="bodyWrapper"
+			styleClass="lang-#{currentLanguageService.language.tag} #{productclass}">
+
+			<!-- >> main-wrapper -->
+			<div id="main-wrapper" class="container-fluid">
+
+				<!-- >> header-wrapper -->
+				<div id="header-wrapper" class="row">
+					<div class="header-left">
+						<div class="header-left-content">
+							<div id="logo">
+								<h:link outcome="home" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- << header-wrapper -->
+
+				<!-- >> content-wrapper -->
+				<div id="content-wrapper" class="row">
+					<br /> <br />
+					<div class="content">
+						<h:panelGroup id="pageContentWrapper">
+							<ui:insert name="page-content" />
+						</h:panelGroup>
+					</div>
+				</div>
+				<!-- << content-wrapper -->
+
+			</div>
+			<!-- << main-wrapper -->
+
+		</h:panelGroup>
+		<!-- << bodyWrapper -->
+
+		<ui:decorate template="primefaces-growl.include.xhtml" />
+		<ui:decorate template="process-status.include.xhtml" />
+	</h:body>
+</f:view>
+</html>

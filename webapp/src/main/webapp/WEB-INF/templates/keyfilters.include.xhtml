@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+	<pe:tooltip global="true" myPosition="top left"
+		atPosition="bottom left" for="@(.ui-state-error)" />
+	<pe:keyFilter regEx="/[\+\-0123456789]/i" preventPaste="false"
+		for="@( .kf-phonenumber )" />
+	<pe:keyFilter regEx="/[_A-Za-z0-9-\+\.\@]/" preventPaste="false"
+		for="@( .kf-email )" />
+	<pe:keyFilter regEx="/[\A-ZА-ЯA-ZӘҒҚҢӨҰҮҺІ\ \-]/i" preventPaste="false"
+		for="@( .kf-person-name )"/>
+</ui:composition>

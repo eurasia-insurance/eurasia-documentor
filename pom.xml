@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.lapsa.maven.pom</groupId>
+		<artifactId>javaee7-app-parent</artifactId>
+		<version>1.3.4</version>
+	</parent>
+
+	<groupId>kz.theeurasia.documentor</groupId>
+	<artifactId>parent</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>Documentor : Parent</name>
+
+	<modules>
+		<module>webapp</module>
+		<module>ear</module>
+	</modules>
+
+	<properties>
+		<!-- UTILs -->
+		<font-awesome-lib.version>4.6.1</font-awesome-lib.version>
+		<!-- APIs -->
+		<kz-lib.version>2.1-SNAPSHOT</kz-lib.version>
+		<lapsa-lib.version>1.1</lapsa-lib.version>
+		<esbd-lib.version>3.0</esbd-lib.version>
+		<insurance-lib.version>1.4-SNAPSHOT</insurance-lib.version>
+		<image-lib.version>1.1-SNAPSHOT</image-lib.version>
+		<!-- EJBs & WARs -->
+		<esbd-connection-impl-default.version>1.0.1</esbd-connection-impl-default.version>
+		<insurance-services-impl-cdi.version>1.0-SNAPSHOT</insurance-services-impl-cdi.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- own -->
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>documentor-webapp</artifactId>
+				<version>${project.version}</version>
+				<type>war</type>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>documentor-ear</artifactId>
+				<version>${project.version}</version>
+				<type>ear</type>
+			</dependency>
+			<!-- internal -->
+			<dependency>
+				<groupId>com.lapsa.kz-lib</groupId>
+				<artifactId>kz-eelib</artifactId>
+				<version>${kz-lib.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.lapsa.lapsa-lib</groupId>
+				<artifactId>lapsa-validation</artifactId>
+				<version>${lapsa-lib.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.lapsa.lapsa-lib</groupId>
+				<artifactId>lapsa-cdiutils</artifactId>
+				<version>${lapsa-lib.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.lapsa.esbd-lib</groupId>
+				<artifactId>esbd-connection-impl-default</artifactId>
+				<version>${esbd-connection-impl-default.version}</version>
+				<type>ejb</type>
+			</dependency>
+			<dependency>
+				<groupId>com.lapsa.insurance-lib</groupId>
+				<artifactId>insurance-services</artifactId>
+				<version>${insurance-lib.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.lapsa.insurance-lib</groupId>
+				<artifactId>insurance-services-impl-cdi</artifactId>
+				<version>${insurance-services-impl-cdi.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.lapsa.image-lib</groupId>
+				<artifactId>image-core</artifactId>
+				<version>${image-lib.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.lapsa.font-awesome-lib</groupId>
+				<artifactId>font-awesome</artifactId>
+				<version>${font-awesome-lib.version}</version>
+			</dependency>
+			<!-- external -->
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>3.4</version>
+			</dependency>
+			<dependency>
+				<groupId>org.primefaces</groupId>
+				<artifactId>primefaces</artifactId>
+				<version>5.3.16</version>
+			</dependency>
+			<dependency>
+				<groupId>org.primefaces.themes</groupId>
+				<artifactId>bootstrap</artifactId>
+				<version>1.0.10</version>
+			</dependency>
+			<dependency>
+				<groupId>org.primefaces.extensions</groupId>
+				<artifactId>primefaces-extensions</artifactId>
+				<version>4.0.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.omnifaces</groupId>
+				<artifactId>omnifaces</artifactId>
+				<version>2.4</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<organization>
+		<name>Eurasia Insurance Company</name>
+		<url>http://www.theeurasia.kz</url>
+	</organization>
+
+	<scm>
+		<connection>scm:git:https://gitrepo.theeurasia.kz/eurasia/documentor.git</connection>
+		<developerConnection>scm:git:https://gitrepo.theeurasia.kz/eurasia/documentor.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
+
+	<issueManagement>
+		<system>gitlab</system>
+		<url>https://gitrepo.theeurasia.kz/eurasia/documentor/issues</url>
+	</issueManagement>
+
+</project>
