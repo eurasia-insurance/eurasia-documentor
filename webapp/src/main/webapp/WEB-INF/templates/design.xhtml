@@ -4,7 +4,7 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:comp="http://xmlns.jcp.org/jsf/composite"
 	xmlns:p="http://primefaces.org/ui">
-<f:view locale="#{currentLanguageService.locale}">
+<f:view locale="ru">
 	<h:head>
 		<title><ui:insert name="page-title" /></title>
 		<meta name="viewport"
@@ -14,8 +14,7 @@
 		<meta name="description"
 			content="Евразия36 интернет-маркет страховых продуктов Страховой компании Евразия, на страницах которого Вы можете выбрать интересующую Вас страховую услугу, расчитать стоимость и оформить и оплатить заказ онлайн" />
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-		<meta http-equiv="content-language"
-			content="#{currentLanguageService.language.tag}" />
+		<meta http-equiv="content-language" content="ru" />
 		<meta name="robots" content="noindex, follow" />
 		<meta name="copyright"
 			content="Все права Акцонерное общество &quot;Страховая компания &quot;Евразия&quot;" />
@@ -42,8 +41,7 @@
 		<ui:decorate template="debug.include.xhtml" />
 		<ui:decorate
 			template="/WEB-INF/templates/ajax-exception-handler.include.xhtml" />
-		<h:panelGroup id="bodyWrapper"
-			styleClass="lang-#{currentLanguageService.language.tag}">
+		<h:panelGroup id="bodyWrapper" styleClass="lang-ru">
 			<div id="main-wrapper" class="container-fluid">
 				<div id="header-wrapper" class="row">
 
