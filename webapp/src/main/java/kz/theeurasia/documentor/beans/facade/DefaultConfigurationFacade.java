@@ -17,8 +17,8 @@ public class DefaultConfigurationFacade implements ConfigurationFacade {
     private static final int FILE_COUNT_LIMIT = 20;
     private static final int FILE_SIZE_LIMIT = 1024 * 1024 * 10; // 10M
     private static final boolean DEBUG = false;
-    private static final int THUMBNAIL_WIDTH = 200;
-    private static final int THUMBNAIL_HEIGHT = 200;
+    private static final int THUMBNAIL_WIDTH = 150;
+    private static final int THUMBNAIL_HEIGHT = 150;
 
     @Override
     public String getAcceptTypes() {
