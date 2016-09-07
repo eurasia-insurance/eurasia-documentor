@@ -6,4 +6,7 @@ import kz.theeurasia.documentor.model.DocumentPackage;
 
 public interface DocumentPackageDAO extends GenericDAO<Integer, DocumentPackage> {
     List<DocumentPackage> findByIdNumber(String idNumber) throws DAOException;
+
+    List<DocumentPackage> findByIdNumber(SearchParameters parameters) throws DAOException;
+
 }
