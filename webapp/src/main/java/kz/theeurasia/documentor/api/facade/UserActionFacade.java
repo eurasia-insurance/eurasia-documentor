@@ -10,6 +10,8 @@ public interface UserActionFacade extends ActionFacade {
 
     Outcome doDeleteFile(UploadedFile file);
 
+    Outcome doSend();
+    
     // other
     void onFileUpload(FileUploadEvent event);
 

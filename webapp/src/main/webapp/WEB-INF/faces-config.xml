@@ -29,6 +29,11 @@
 			<redirect />
 		</navigation-case>
 		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/success.html</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
 			<from-outcome>expired</from-outcome>
 			<to-view-id>/errorpages/expired.html</to-view-id>
 			<redirect />
