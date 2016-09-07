@@ -37,12 +37,19 @@ public class DefaultUploadedFileDAO extends DefaultGenericDAO<Integer, UploadedF
 
 	    List<Predicate> whereOptions = new ArrayList<>();
 
-	    // request status
+	    // idNumber
 	    if (parameters.getIdNumberPattern() != null && !parameters.getIdNumberPattern().trim().isEmpty()
 		    && parameters.getIdNumberPattern().trim().length() >= 3) {
 		String pattern = "%" + parameters.getIdNumberPattern().trim() + "%";
 		whereOptions
 			.add(cb.like(root.get(UploadedFile_.documentPackage).get(DocumentPackage_.idNumber), pattern));
+
+		// fileName
+		if (parameters.getFileNamePattern() != null) {
+		    String fpattern = "%" + parameters.getFileNamePattern().trim() + "%";
+		    whereOptions
+			    .add(cb.like(root.get(UploadedFile_.name), fpattern));
+		}
 	    }
 
 	    if (whereOptions.isEmpty())
