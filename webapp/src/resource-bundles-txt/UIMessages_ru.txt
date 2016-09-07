@@ -7,9 +7,21 @@ name.site = Евразия 36
 command.upload-cancel = Отмена
 command.upload-begin = Начать загрузку
 command.upload-choose = Выбрать файлы
+command.send = Отправить документы
+command.go-home-page = На главную
 
 # labels
 label.id-number = Ваш ИИН
 
 # placeholders
 placeholder.id-number = Введите Ваш ИИН
+
+# texts
+text.wait = Подождите...
+text.oops = Ой!
+
+# errors
+error.internal-server-error = Упс! Что-то пошло не так. Мы работаем над решением этой проблемы.
+error.http-error-500 = Что-то пошло не так. Произошла неизвестная внутренняя неполадка в системе. Мы уже работаем над решением этой проблемы и скоро все будет ОК.
+error.http-error-404 = К сожалению, мы не можем найти страницу, которую Вы ищите. Попробуйте вернуться на главную.
+error.http-error-expired = К сожалению, время работы сессии истекло. Пожалуйста перейдите на требуемую Вам страницу и начните работу с начала
