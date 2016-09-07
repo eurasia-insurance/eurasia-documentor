@@ -11,8 +11,6 @@
 		<locale-config>
 			<default-locale>ru_RU</default-locale>
 			<supported-locale>ru_RU</supported-locale>
-			<supported-locale>en_US</supported-locale>
-			<supported-locale>kk_KZ</supported-locale>
 		</locale-config>
 		<resource-bundle>
 			<base-name>UIMessages</base-name>
