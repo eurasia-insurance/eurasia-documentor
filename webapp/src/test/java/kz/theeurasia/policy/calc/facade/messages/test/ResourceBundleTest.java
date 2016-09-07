@@ -23,26 +23,6 @@ public class ResourceBundleTest {
 	testBundle(resources);
     }
 
-    @Test
-    public void testNoExcessRecordsEnglish() {
-	Locale locale = Locale.forLanguageTag("en");
-	assertThat(locale.getLanguage(), allOf(not(nullValue()), is("en")));
-	ResourceBundle resources = ResourceBundle.getBundle(UIMessages.BUNDLE_BASENAME, locale);
-	assertThat(resources, not(nullValue()));
-	assertThat(resources.getString("name.company-short"), allOf(not(nullValue()), is("IC Eurasia")));
-	testBundle(resources);
-    }
-
-    @Test
-    public void testNoExcessRecordsKazakh() {
-	Locale locale = Locale.forLanguageTag("kk");
-	assertThat(locale.getLanguage(), allOf(not(nullValue()), is("kk")));
-	ResourceBundle resources = ResourceBundle.getBundle(UIMessages.BUNDLE_BASENAME, locale);
-	assertThat(resources, not(nullValue()));
-	assertThat(resources.getString("name.company-short"), allOf(not(nullValue()), is("Евразия CК")));
-	testBundle(resources);
-    }
-
     private UIMessages byKey(String key) {
 	for (UIMessages ui : UIMessages.values())
 	    if (ui.getKey().equals(key))

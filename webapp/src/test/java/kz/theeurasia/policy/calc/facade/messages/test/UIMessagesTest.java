@@ -18,18 +18,6 @@ public class UIMessagesTest {
 	testBundle(resources);
     }
 
-    @Test
-    public void testEnglishBundle() {
-	ResourceBundle resources = ResourceBundle.getBundle(UIMessages.BUNDLE_BASENAME, Locale.forLanguageTag("en"));
-	testBundle(resources);
-    }
-
-    @Test
-    public void testKazakhBundle() {
-	ResourceBundle resources = ResourceBundle.getBundle(UIMessages.BUNDLE_BASENAME, Locale.forLanguageTag("kk"));
-	testBundle(resources);
-    }
-
     private void testBundle(ResourceBundle resources) {
 	assertThat(resources, not(nullValue()));
 	for (UIMessages c : UIMessages.values()) {
