@@ -8,6 +8,7 @@ import javax.inject.Named;
 
 import org.primefaces.event.FileUploadEvent;
 
+import kz.theeurasia.documentor.api.facade.Outcome;
 import kz.theeurasia.documentor.api.facade.UserActionFacade;
 import kz.theeurasia.documentor.api.holder.DocumentPackageHolder;
 import kz.theeurasia.documentor.model.DocumentPackage;
@@ -25,18 +26,18 @@ public class DefaultUserActionFacade implements UserActionFacade {
     private DocumentPackageHolder documentPackageHolder;
 
     @Override
-    public String doInitialize() {
+    public Outcome doInitialize() {
 	return null;
     }
 
     @Override
-    public String doComplete() {
+    public Outcome doComplete() {
 	// TODO Auto-generated method stub
 	return null;
     }
 
     @Override
-    public String doDeleteFile(UploadedFile file) {
+    public Outcome doDeleteFile(UploadedFile file) {
 	DocumentPackage pack = documentPackageHolder.getValue();
 	pack.getUploadedFiles().remove(file);
 	return null;

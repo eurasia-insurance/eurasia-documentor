@@ -6,9 +6,9 @@ import kz.theeurasia.documentor.model.UploadedFile;
 
 public interface UserActionFacade extends ActionFacade {
 
-    String doComplete();
+    Outcome doComplete();
 
-    String doDeleteFile(UploadedFile file);
+    Outcome doDeleteFile(UploadedFile file);
 
     // other
     void onFileUpload(FileUploadEvent event);
