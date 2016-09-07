@@ -15,6 +15,9 @@
 			<basic name="idNumber">
 				<column name="IDNUMBER" />
 			</basic>
+			<basic name="created">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
 			<one-to-many name="uploadedFiles" fetch="LAZY"
 				orphan-removal="true" mapped-by="documentPackage" />
 		</attributes>
