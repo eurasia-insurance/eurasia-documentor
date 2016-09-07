@@ -19,6 +19,7 @@ placeholder.id-number = Введите Ваш ИИН
 # texts
 text.wait = Подождите...
 text.oops = Ой!
+text.no-files = Загрузите файлы для отправки
 
 # errors
 error.internal-server-error = Упс! Что-то пошло не так. Мы работаем над решением этой проблемы.

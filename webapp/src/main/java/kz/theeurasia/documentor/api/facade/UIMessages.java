@@ -23,6 +23,7 @@ public enum UIMessages {
     // texts
     TEXT_WAIT("text.wait"),
     TEXT_OOPS("text.oops"),
+    TEXT_NO_FILES("text.no-files"),
 
     // errors
     ERROR_INTERNAL_SERVER_ERROR("error.internal-server-error"),
