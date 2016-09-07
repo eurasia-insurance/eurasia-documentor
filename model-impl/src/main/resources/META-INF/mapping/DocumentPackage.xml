@@ -5,6 +5,12 @@
 
 	<entity class="kz.theeurasia.documentor.model.DocumentPackage">
 		<table name="DOCUMENT_PACKAGE" />
+		<entity-listeners>
+			<entity-listener
+				class="kz.theeurasia.documentor.model.listeners.DocumentPackageListener">
+				<pre-persist method-name="prePersist" />
+			</entity-listener>
+		</entity-listeners>
 		<attributes>
 			<basic name="idNumber">
 				<column name="IDNUMBER" />

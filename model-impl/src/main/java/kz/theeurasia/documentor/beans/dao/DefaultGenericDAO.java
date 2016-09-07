@@ -78,6 +78,11 @@ public abstract class DefaultGenericDAO<I, T extends GenericEntity<I>> implement
 		.getResultList();
     }
 
+    protected <X> List<X> resultList(TypedQuery<X> query) {
+	return query
+		.getResultList();
+    }
+
     // PRIVATE
 
     private T findByIdHint(final I id, Map<String, Object> hints)
