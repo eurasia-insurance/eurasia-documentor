@@ -8,8 +8,6 @@ public enum UIMessages {
     NAME_SITE("name.site"),
 
     // commands
-    COMMAND_UPLOAD_CANCEL("command.upload-cancel"),
-    COMMAND_UPLOAD_BEGIN("command.upload-begin"),
     COMMAND_UPLOAD_CHOOSE("command.upload-choose"),
     COMMAND_SEND("command.send"),
     COMMAND_GO_HOME_PAGE("command.go-home-page"),
@@ -24,6 +22,8 @@ public enum UIMessages {
     TEXT_WAIT("text.wait"),
     TEXT_OOPS("text.oops"),
     TEXT_NO_FILES("text.no-files"),
+    TEXT_SENT_SUCCESS("text.sent-success"),
+
 
     // errors
     ERROR_INTERNAL_SERVER_ERROR("error.internal-server-error"),

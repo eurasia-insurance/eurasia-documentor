@@ -4,9 +4,7 @@ name.company-full = Страховая компания Евразия
 name.site = Евразия 36
 
 # commands
-command.upload-cancel = Отмена
-command.upload-begin = Начать загрузку
-command.upload-choose = Выбрать файлы
+command.upload-choose = Выбрать документы
 command.send = Отправить документы
 command.go-home-page = На главную
 
@@ -19,7 +17,8 @@ placeholder.id-number = Введите Ваш ИИН
 # texts
 text.wait = Подождите...
 text.oops = Ой!
-text.no-files = Загрузите файлы для отправки
+text.no-files = Выберите документы для для отправки
+text.sent-success = Документы успешно отправлены
 
 # errors
 error.internal-server-error = Упс! Что-то пошло не так. Мы работаем над решением этой проблемы.
