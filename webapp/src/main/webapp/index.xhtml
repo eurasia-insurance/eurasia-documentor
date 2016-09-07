@@ -18,7 +18,7 @@
 
 	<ui:define name="page-content">
 
-		<h:form id="form">
+		<h:form id="mainForm">
 
 			<h:panelGroup styleClass="row form-group">
 				<p:outputLabel value="#{ui['label.id-number']}" for="idNumber" />
@@ -35,13 +35,25 @@
 			<h:panelGroup styleClass="row form-group">
 				<p:fileUpload fileUploadListener="#{userActionFacade.onFileUpload}"
 					mode="advanced" dragDropSupport="true" multiple="true" auto="true"
-					update="@form" sizeLimit="#{configurationFacade.fileSizeLimit}"
+					update="@form,filesForm" sizeLimit="#{configurationFacade.fileSizeLimit}"
 					fileLimit="#{configurationFacade.fileCountLimit}"
 					cancelLabel="#{ui['command.upload-cancel']}"
 					uploadLabel="#{ui['command.upload-begin']}"
 					label="#{ui['command.upload-choose']}"
 					accept="#{configurationFacade.acceptTypes}" />
 			</h:panelGroup>
+
+			<h:panelGroup styleClass="text-center row form-group">
+				<p:commandLink styleClass="btn btn-primary btn-submit-polis"
+					process="@form" update="@form" action="#{userActionFacade.doSend}">
+					<h:outputText value="#{ui['command.send']}" />
+					<i class="fa fa-paper-plane" aria-hidden="true" />
+				</p:commandLink>
+			</h:panelGroup>
+
+		</h:form>
+
+		<h:form id="filesForm">
 
 			<!-- >> files-panel-wrapper -->
 			<h:panelGroup
@@ -67,11 +79,6 @@
 								<o:graphicImage rendered="#{uf.type.image}" dataURI="true"
 									value="#{functionFacade.thumbnail(uf, configurationFacade.thumnailWidth, configurationFacade.thumnailHeight)}" />
 
-								<!-- 								<o:graphicImage rendered="#{uf.type.image}" dataURI="true" -->
-								<!-- 									value="#{functionFacade.thumbnail(uf, configurationFacade.thumnailWidth, configurationFacade.thumnailHeight)}" -->
-								<!-- 									width="#{configurationFacade.thumnailWidth}" -->
-								<!-- 									height="#{configurationFacade.thumnailHeight}" /> -->
-
 							</h:panelGroup>
 							<!-- << icon-wrapper -->
 
@@ -87,16 +94,19 @@
 								<br />
 
 								<h:outputText value="&amp;nbsp;" escape="false" />
+
 								<p:commandLink ajax="false" styleClass="command fa fa-download">
 									<p:fileDownload value="#{functionFacade.download(uf)}"
 										contentDisposition="attachment" />
 								</p:commandLink>
 
 								<h:outputText value="&amp;nbsp;" escape="false" />
+
 								<p:commandLink action="#{userActionFacade.doDeleteFile(uf)}"
 									process="@this" update="@form"
 									styleClass="command fa fa-trash-o">
 								</p:commandLink>
+
 
 							</h:panelGroup>
 							<!-- << download-link-wrapper -->
@@ -111,16 +121,6 @@
 
 			</h:panelGroup>
 			<!-- << files-panel-wrapper -->
-
-
-			<h:panelGroup styleClass="text-center row">
-				<p:commandLink styleClass="btn btn-primary btn-submit-polis"
-					process="@form" update="@form" action="#{userActionFacade.doSend}">
-					<h:outputText value="#{ui['command.send']}" />
-					<i class="fa fa-paper-plane" aria-hidden="true" />
-				</p:commandLink>
-			</h:panelGroup>
-
 
 		</h:form>
 
