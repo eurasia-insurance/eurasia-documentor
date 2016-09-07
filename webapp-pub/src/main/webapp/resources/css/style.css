@@ -876,6 +876,15 @@ h1.text-center {
 }
 
 
+.files-wrapper .ui-widget-content {
+	border: none;
+	background: transparent;
+}
+
+.files-wrapper .ui-datagrid-content-empty {
+	color: #FFF;
+}
+
 .file-wrapper {
 	display: inline-block;
 	margin: .5em;

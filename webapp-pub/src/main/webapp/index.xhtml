@@ -55,72 +55,61 @@
 
 		<h:form id="filesForm">
 
-			<!-- >> files-panel-wrapper -->
-			<h:panelGroup
-				styleClass="col-overlay files-panel-wrapper row form-group">
+			<!-- >> files-wrapper -->
+			<h:panelGroup styleClass="files-wrapper col-overlay row form-group">
 
-				<h:outputText value="#{ui['text.no-files']}" styleClass="white-text"
-					rendered="#{empty documentPackage.value.uploadedFiles}" />
+				<p:dataGrid var="uf" value="#{documentPackage.value.uploadedFiles}"
+					columns="4" emptyMessage="#{ui['text.no-files']}" layout="grid">
 
-				<ui:repeat var="uf" value="#{documentPackage.value.uploadedFiles}">
+					<!-- >> file-wrapper -->
+					<h:panelGroup styleClass="file-wrapper">
 
-					<!-- >> col -->
-					<h:panelGroup styleClass="col-md-3">
+						<!-- >> icon-wrapper -->
+						<h:panelGroup styleClass="icon-wrapper">
 
-						<!-- >> file-wrapper -->
-						<h:panelGroup styleClass="file-wrapper">
+							<h:panelGroup rendered="#{not uf.type.image}"
+								styleClass="fa #{uf.type.fontAwesomeClass}" />
 
-							<!-- >> icon-wrapper -->
-							<h:panelGroup styleClass="icon-wrapper">
-
-								<h:panelGroup rendered="#{not uf.type.image}"
-									styleClass="fa #{uf.type.fontAwesomeClass}" />
-
-								<o:graphicImage rendered="#{uf.type.image}" dataURI="true"
-									value="#{functionFacade.thumbnail(uf, configurationFacade.thumbnailWidth, configurationFacade.thumbnailHeight)}" />
-
-							</h:panelGroup>
-							<!-- << icon-wrapper -->
-
-							<!-- >> download-link-wrapper -->
-							<h:panelGroup styleClass="caption-wrapper">
-
-								<p:commandLink ajax="false">
-									<h:outputText value="#{uf.name}" />
-									<p:fileDownload value="#{functionFacade.download(uf)}"
-										contentDisposition="inline" />
-								</p:commandLink>
-
-								<br />
-
-								<h:outputText value="&amp;nbsp;" escape="false" />
-
-								<p:commandLink ajax="false" styleClass="command fa fa-download">
-									<p:fileDownload value="#{functionFacade.download(uf)}"
-										contentDisposition="attachment" />
-								</p:commandLink>
-
-								<h:outputText value="&amp;nbsp;" escape="false" />
-
-								<p:commandLink action="#{userActionFacade.doDeleteFile(uf)}"
-									process="@this" update="@form"
-									styleClass="command fa fa-trash-o">
-								</p:commandLink>
-
-
-							</h:panelGroup>
-							<!-- << download-link-wrapper -->
+							<o:graphicImage rendered="#{uf.type.image}" dataURI="true"
+								value="#{functionFacade.thumbnail(uf, configurationFacade.thumbnailWidth, configurationFacade.thumbnailHeight)}" />
 
 						</h:panelGroup>
-						<!-- << file-wrapper -->
+						<!-- << icon-wrapper -->
+
+						<!-- >> caption-wrapper -->
+						<h:panelGroup styleClass="caption-wrapper">
+
+							<p:commandLink ajax="false">
+								<h:outputText value="#{uf.name}" />
+								<p:fileDownload value="#{functionFacade.download(uf)}"
+									contentDisposition="inline" />
+							</p:commandLink>
+
+							<br />
+
+							<p:commandLink ajax="false" styleClass="command fa fa-download">
+								<p:fileDownload value="#{functionFacade.download(uf)}"
+									contentDisposition="attachment" />
+							</p:commandLink>
+
+							<h:outputText value="&amp;nbsp;" escape="false" />
+
+							<p:commandLink action="#{userActionFacade.doDeleteFile(uf)}"
+								process="@this" update="@form"
+								styleClass="command fa fa-trash-o">
+							</p:commandLink>
+
+
+						</h:panelGroup>
+						<!-- << caption-wrapper -->
 
 					</h:panelGroup>
-					<!-- << col -->
+					<!-- << file-wrapper -->
 
-				</ui:repeat>
+				</p:dataGrid>
 
 			</h:panelGroup>
-			<!-- << files-panel-wrapper -->
+			<!-- << files-wrapper -->
 
 		</h:form>
 
