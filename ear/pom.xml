@@ -37,6 +37,12 @@
 			<type>jar</type>
 		</dependency>
 		<!-- external -->
+		<dependency>
+			<groupId>org.omnifaces</groupId>
+			<artifactId>omnifaces</artifactId>
+			<scope>compile</scope>
+			<optional>false</optional>
+		</dependency>
 	</dependencies>
 
 	<build>
