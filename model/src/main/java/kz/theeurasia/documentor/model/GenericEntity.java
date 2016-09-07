@@ -2,21 +2,13 @@ package kz.theeurasia.documentor.model;
 
 import java.util.UUID;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
-
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
-@MappedSuperclass
 public abstract class GenericEntity<T> {
 
     protected transient final UUID uuid = UUID.randomUUID();
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     protected T id;
 
     @Override

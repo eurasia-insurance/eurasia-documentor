@@ -20,12 +20,12 @@
 			<artifactId>documentor-webapp</artifactId>
 			<type>war</type>
 		</dependency>
-		<!-- internal -->
 		<dependency>
-			<groupId>com.lapsa.esbd-lib</groupId>
-			<artifactId>esbd-connection-impl-default</artifactId>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>documentor-model-impl</artifactId>
 			<type>ejb</type>
 		</dependency>
+		<!-- internal -->
 		<dependency>
 			<groupId>com.lapsa.lapsa-lib</groupId>
 			<artifactId>lapsa-cdiutils</artifactId>
@@ -39,6 +39,7 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-ear-plugin</artifactId>
 				<configuration>
+					<skinnyWars>true</skinnyWars>
 					<modules>
 						<webModule>
 							<groupId>${project.groupId}</groupId>

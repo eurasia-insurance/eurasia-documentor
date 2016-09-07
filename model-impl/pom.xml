@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>kz.theeurasia.documentor</groupId>
+		<artifactId>parent</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>documentor-model-impl</artifactId>
+	<packaging>ejb</packaging>
+
+	<name>Documentor : Model impl EJB</name>
+
+	<dependencies>
+		<!-- own -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>documentor-model</artifactId>
+			<scope>compile</scope>
+			<optional>false</optional>
+		</dependency>
+		<!-- internal -->
+		<dependency>
+			<groupId>com.lapsa.insurance-lib</groupId>
+			<artifactId>insurance-validation</artifactId>
+			<scope>compile</scope>
+			<optional>false</optional>
+		</dependency>
+		<dependency>
+			<groupId>com.lapsa.kz-lib</groupId>
+			<artifactId>kz-eelib</artifactId>
+			<scope>compile</scope>
+			<optional>false</optional>
+		</dependency>
+		<!-- external -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<scope>compile</scope>
+			<optional>false</optional>
+		</dependency>
+		<!-- JavaEE -->
+		<dependency>
+			<groupId>org.eclipse.persistence</groupId>
+			<artifactId>javax.persistence</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.enterprise</groupId>
+			<artifactId>cdi-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.ejb</groupId>
+			<artifactId>javax.ejb-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<!-- test -->
+	</dependencies>
+
+</project>

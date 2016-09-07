@@ -16,6 +16,8 @@
 	<name>Documentor : Parent</name>
 
 	<modules>
+		<module>model</module>
+		<module>model-impl</module>
 		<module>webapp</module>
 		<module>ear</module>
 	</modules>
@@ -37,6 +39,17 @@
 	<dependencyManagement>
 		<dependencies>
 			<!-- own -->
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>documentor-model</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>documentor-model-impl</artifactId>
+				<version>${project.version}</version>
+				<type>ejb</type>
+			</dependency>
 			<dependency>
 				<groupId>${project.groupId}</groupId>
 				<artifactId>documentor-webapp</artifactId>
@@ -73,7 +86,7 @@
 			</dependency>
 			<dependency>
 				<groupId>com.lapsa.insurance-lib</groupId>
-				<artifactId>insurance-services</artifactId>
+				<artifactId>insurance-validation</artifactId>
 				<version>${insurance-lib.version}</version>
 			</dependency>
 			<dependency>

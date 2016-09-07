@@ -15,22 +15,16 @@
 
 	<dependencies>
 		<!-- own -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>documentor-model</artifactId>
+			<scope>compile</scope>
+			<optional>false</optional>
+		</dependency>
 		<!-- internal -->
 		<dependency>
 			<groupId>com.lapsa.kz-lib</groupId>
 			<artifactId>kz-eelib</artifactId>
-			<scope>compile</scope>
-			<optional>false</optional>
-		</dependency>
-		<dependency>
-			<groupId>com.lapsa.insurance-lib</groupId>
-			<artifactId>insurance-services</artifactId>
-			<scope>compile</scope>
-			<optional>false</optional>
-		</dependency>
-		<dependency>
-			<groupId>com.lapsa.insurance-lib</groupId>
-			<artifactId>insurance-services-impl-cdi</artifactId>
 			<scope>compile</scope>
 			<optional>false</optional>
 		</dependency>
@@ -84,11 +78,6 @@
 		</dependency>
 		<!-- JavaEE -->
 		<dependency>
-			<groupId>org.eclipse.persistence</groupId>
-			<artifactId>javax.persistence</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
 			<groupId>org.glassfish</groupId>
 			<artifactId>javax.faces</artifactId>
 			<scope>provided</scope>
@@ -101,11 +90,6 @@
 		<dependency>
 			<groupId>javax.enterprise</groupId>
 			<artifactId>cdi-api</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>javax.validation</groupId>
-			<artifactId>validation-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>

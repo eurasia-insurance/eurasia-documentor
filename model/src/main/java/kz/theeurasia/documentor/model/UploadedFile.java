@@ -1,40 +1,15 @@
 package kz.theeurasia.documentor.model;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.Lob;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "UPLOADED_FILE")
 public class UploadedFile extends GenericEntity<Integer> {
 
-    @Basic
-    @Column(name = "NAME")
     private String name;
 
-    @Basic
-    @Column(name = "MIME_TYPE")
     private String mimeType;
 
-    @Basic
-    @Column(name = "TYPE")
-    @Enumerated(EnumType.STRING)
     private FileType type;
 
-    @Basic(fetch = FetchType.LAZY)
-    @Column(name = "CONTENT")
-    @Lob
     private byte[] content;
 
-    @ManyToOne
-    @JoinColumn(name = "DOCUMENT_PACKAGE_ID")
     private DocumentPackage documentPackage;
 
     private static final int PRIME = 37;
