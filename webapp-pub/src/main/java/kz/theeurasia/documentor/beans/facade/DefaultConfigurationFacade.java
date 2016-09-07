@@ -52,12 +52,12 @@ public class DefaultConfigurationFacade implements ConfigurationFacade {
     }
 
     @Override
-    public int getThumnailWidth() {
+    public int getThumbnailWidth() {
 	return THUMBNAIL_WIDTH;
     }
 
     @Override
-    public int getThumnailHeight() {
+    public int getThumbnailHeight() {
 	return THUMBNAIL_HEIGHT;
     }
 }

@@ -10,8 +10,8 @@ public interface ConfigurationFacade {
     
     boolean isDebug();
 
-    int getThumnailWidth();
+    int getThumbnailWidth();
 
-    int getThumnailHeight();
+    int getThumbnailHeight();
 
 }

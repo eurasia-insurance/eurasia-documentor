@@ -893,13 +893,13 @@ h1.text-center {
 	padding: 10px;
 	margin: 0px;
 	overflow: auto;
-	width: #{configurationFacade.thumnailWidth + 20}px;
+	width: #{configurationFacade.thumbnailWidth + 20}px;
 	
 }
 
 .file-wrapper .icon-wrapper {
 	text-align: center;
-	height: #{configurationFacade.thumnailHeight + 20}px;
+	height: #{configurationFacade.thumbnailHeight + 20}px;
 
 /* 	border: 1px solid green; */
 }
@@ -923,7 +923,7 @@ h1.text-center {
 	text-align: center;
 	text-shadow: 0 0 2px rgba(0, 0, 0, .8);
 	height: 100%;
-	font-size: #{configurationFacade.thumnailHeight}px;
+	font-size: #{configurationFacade.thumbnailHeight}px;
 	
 /*  	border: 1px solid black; */
 }
