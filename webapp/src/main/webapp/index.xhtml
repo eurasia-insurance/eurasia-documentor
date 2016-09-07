@@ -20,7 +20,7 @@
 
 		<h:form id="form">
 
-			<h:panelGroup styleClass="span-to-div row form-group">
+			<h:panelGroup styleClass="row form-group">
 				<p:outputLabel value="#{ui['label.id-number']}" for="idNumber" />
 				<p:inputMask id="idNumber" value="#{documentPackage.value.idNumber}"
 					mask="999 999 999 999" slotChar="&#9679;"
@@ -32,7 +32,7 @@
 				</p:inputMask>
 			</h:panelGroup>
 
-			<h:panelGroup styleClass="span-to-div row form-group">
+			<h:panelGroup styleClass="row form-group">
 				<p:fileUpload fileUploadListener="#{userActionFacade.onFileUpload}"
 					mode="advanced" dragDropSupport="true" multiple="true" auto="true"
 					update="@form" sizeLimit="#{configurationFacade.fileSizeLimit}"
@@ -43,22 +43,11 @@
 					accept="#{configurationFacade.acceptTypes}" />
 			</h:panelGroup>
 
-			<h:panelGroup styleClass="span-to-div text-center row">
-				<p:commandLink styleClass="btn btn-primary btn-submit-polis"
-					process="@form" update="@form" action="#{userActionFacade.doSend}">
-					<h:outputText value="#{ui['command.send']}" />
-					<i class="fa fa-paper-plane" aria-hidden="true" />
-				</p:commandLink>
-			</h:panelGroup>
-
-
-			<!-- allowTypes="/(\.|\/)(gif|jpe?g|png)$/" -->
-
 			<!-- >> files-panel-wrapper -->
 			<h:panelGroup
-				styleClass="files-panel-wrapper span-to-div row form-group">
+				styleClass="col-overlay files-panel-wrapper row form-group">
 
-				<h:outputText value="#{ui['text.no-files']}"
+				<h:outputText value="#{ui['text.no-files']}" styleClass="white-text"
 					rendered="#{empty documentPackage.value.uploadedFiles}" />
 
 				<ui:repeat var="uf" value="#{documentPackage.value.uploadedFiles}">
@@ -122,6 +111,16 @@
 
 			</h:panelGroup>
 			<!-- << files-panel-wrapper -->
+
+
+			<h:panelGroup styleClass="text-center row">
+				<p:commandLink styleClass="btn btn-primary btn-submit-polis"
+					process="@form" update="@form" action="#{userActionFacade.doSend}">
+					<h:outputText value="#{ui['command.send']}" />
+					<i class="fa fa-paper-plane" aria-hidden="true" />
+				</p:commandLink>
+			</h:panelGroup>
+
 
 		</h:form>
 
