@@ -54,8 +54,9 @@ public class DefaultDocumentPackageDAO extends DefaultGenericDAO<Integer, Docume
 	    List<Predicate> whereOptions = new ArrayList<>();
 
 	    // request status
-	    if (parameters.getIdNumberPattern() != null) {
-		String pattern = parameters.getIdNumberPattern() + "%";
+	    if (parameters.getIdNumberPattern() != null && !parameters.getIdNumberPattern().trim().isEmpty()
+		    && parameters.getIdNumberPattern().trim().length() >= 3) {
+		String pattern = "%" + parameters.getIdNumberPattern().trim() + "%";
 		whereOptions.add(cb.like(root.get(DocumentPackage_.idNumber), pattern));
 	    }
 
