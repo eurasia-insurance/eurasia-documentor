@@ -1,5 +1,6 @@
 package kz.theeurasia.documentor.model;
 
+import java.util.Date;
 import java.util.List;
 
 import com.lapsa.insurance.validation.NotNullValue;
@@ -10,6 +11,9 @@ public class DocumentPackage extends GenericEntity<Integer> {
     @NotNullValue
     @ValidIdNumber
     private String idNumber;
+
+    @NotNullValue
+    private Date created;
 
     private List<UploadedFile> uploadedFiles;
 
@@ -34,6 +38,14 @@ public class DocumentPackage extends GenericEntity<Integer> {
 
     public void setIdNumber(String idNumber) {
 	this.idNumber = idNumber;
+    }
+
+    public Date getCreated() {
+	return created;
+    }
+
+    public void setCreated(Date created) {
+	this.created = created;
     }
 
     public List<UploadedFile> getUploadedFiles() {
