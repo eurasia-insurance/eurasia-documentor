@@ -43,6 +43,18 @@
 								process="@form" update="@form,resultsForm" />
 						</p:column>
 					</p:row>
+					<p:row>
+						<p:column>
+							<p:outputLabel value="Имя файла:" for="fileName" />
+						</p:column>
+						<p:column>
+							<p:inputText id="fileName"
+								value="#{searchParameters.value.fileNamePattern}">
+								<p:ajax process="@this" update="@form,resultsForm" delay="500"
+									listener="#{userActionFacade.onFilterChanged}" />
+							</p:inputText>
+						</p:column>
+					</p:row>
 				</p:panelGrid>
 				<!-- << panelGrid simple -->
 
@@ -83,7 +95,7 @@
 					</h:panelGroup>
 					<!-- << icon-wrapper -->
 
-					<!-- >> download-link-wrapper -->
+					<!-- >> caption-wrapper -->
 					<h:panelGroup styleClass="caption-wrapper">
 
 						<p:commandLink ajax="false" target="_blank">
@@ -91,19 +103,22 @@
 							<p:fileDownload value="#{functionFacade.download(uf)}"
 								contentDisposition="inline" />
 						</p:commandLink>
-
 						<br />
-
-						<h:outputText value="&amp;nbsp;" escape="false" />
-
+						<br />
+						<h:outputText value="ИИН: #{uf.documentPackage.idNumber}" />
+						<br />
+						<h:outputText value="Дата: " />
+						<h:outputText value="#{uf.documentPackage.created}">
+							<f:convertDateTime locale="ru_RU" type="both" />
+						</h:outputText>
+						<br />
 						<p:commandLink ajax="false" styleClass="command fa fa-download">
 							<p:fileDownload value="#{functionFacade.download(uf)}"
 								contentDisposition="attachment" />
 						</p:commandLink>
 
-
 					</h:panelGroup>
-					<!-- << download-link-wrapper -->
+					<!-- << caption-wrapper -->
 
 				</h:panelGroup>
 				<!-- << file-wrapper -->
