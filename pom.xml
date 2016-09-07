@@ -19,7 +19,10 @@
 		<module>model</module>
 		<module>model-impl</module>
 		<module>webapp-pub</module>
+		<module>webapp-crm</module>
 		<module>ear-pub</module>
+		<module>ear-crm</module>
+		<module>ear</module>
 	</modules>
 
 	<properties>
@@ -57,6 +60,18 @@
 			<dependency>
 				<groupId>${project.groupId}</groupId>
 				<artifactId>documentor-ear-pub</artifactId>
+				<version>${project.version}</version>
+				<type>ear</type>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>documentor-webapp-crm</artifactId>
+				<version>${project.version}</version>
+				<type>war</type>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>documentor-ear-crm</artifactId>
 				<version>${project.version}</version>
 				<type>ear</type>
 			</dependency>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:comp="http://xmlns.jcp.org/jsf/composite"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:o="http://omnifaces.org/ui"
+	template="/WEB-INF/templates/design.xhtml">
+
+	<ui:define name="page-title">
+	</ui:define>
+
+	<ui:define name="page-content">
+
+		<h:form>
+
+			<f:metadata>
+				<f:viewAction action="#{userActionFacade.doInitialize}" />
+			</f:metadata>
+
+			<p:panel id="filterPanel">
+
+				<!-- >> panelGrid simple -->
+				<p:panelGrid>
+					<p:row>
+						<p:column>
+							<p:outputLabel value="ИИН:" for="idNumber" />
+						</p:column>
+						<p:column>
+							<p:inputText id="idNumber"
+								value="#{searchParameters.value.idNumberPattern}">
+								<p:ajax process="@this" update="@form,resultsForm" delay="500"
+									listener="#{userActionFacade.onFilterChanged}" />
+							</p:inputText>
+						</p:column>
+						<p:column>
+							<p:defaultCommand target="searchCommand" />
+							<p:commandButton id="searchCommand" value="Искать"
+								process="@form" update="@form,resultsForm" />
+						</p:column>
+					</p:row>
+				</p:panelGrid>
+				<!-- << panelGrid simple -->
+
+				<p:panelGrid>
+					<p:row>
+						<p:column>
+							<p:commandLink value="очистить критерии поиска"
+								action="#{userActionFacade.doResetFilter}" process="@this"
+								update="@form,resultsForm" />
+						</p:column>
+					</p:row>
+				</p:panelGrid>
+
+			</p:panel>
+
+		</h:form>
+
+		<h:form id="resultsForm">
+
+			<p:dataGrid var="uf" value="#{uploadedFiles.value}" paginator="true"
+				paginatorAlwaysVisible="false" layout="grid"
+				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+				emptyMessage="Нет запросов удовлетворяющих критериям поиска"
+				rows="20" columns="5" lazy="true">
+
+				<!-- >> file-wrapper -->
+				<h:panelGroup styleClass="file-wrapper">
+
+					<!-- >> icon-wrapper -->
+					<h:panelGroup styleClass="icon-wrapper">
+
+						<h:panelGroup rendered="#{not uf.type.image}"
+							styleClass="fa #{uf.type.fontAwesomeClass}" />
+
+						<o:graphicImage rendered="#{uf.type.image}" dataURI="true"
+							value="#{functionFacade.thumbnail(uf, configurationFacade.thumbnailWidth, configurationFacade.thumbnailHeight)}" />
+
+					</h:panelGroup>
+					<!-- << icon-wrapper -->
+
+					<!-- >> download-link-wrapper -->
+					<h:panelGroup styleClass="caption-wrapper">
+
+						<p:commandLink ajax="false" target="_blank">
+							<h:outputText value="#{uf.name}" />
+							<p:fileDownload value="#{functionFacade.download(uf)}"
+								contentDisposition="inline" />
+						</p:commandLink>
+
+						<br />
+
+						<h:outputText value="&amp;nbsp;" escape="false" />
+
+						<p:commandLink ajax="false" styleClass="command fa fa-download">
+							<p:fileDownload value="#{functionFacade.download(uf)}"
+								contentDisposition="attachment" />
+						</p:commandLink>
+
+
+					</h:panelGroup>
+					<!-- << download-link-wrapper -->
+
+				</h:panelGroup>
+				<!-- << file-wrapper -->
+			</p:dataGrid>
+
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>

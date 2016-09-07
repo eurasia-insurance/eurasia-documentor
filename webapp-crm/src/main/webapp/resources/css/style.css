@@ -1,0 +1,75 @@
+
+.file-wrapper {
+	display: block;
+/* 	margin: .5em; */
+	padding: 10px;
+
+	overflow: auto;
+
+/* 	border: 1px solid red; */
+}
+
+
+.file-wrapper .icon-wrapper, 
+.file-wrapper .caption-wrapper {
+	display: block;
+	padding: 10px;
+	margin: 0px;
+	overflow: auto;
+	width: #{configurationFacade.thumbnailWidth + 20}px;
+	
+}
+
+.file-wrapper .icon-wrapper {
+	text-align: center;
+	height: #{configurationFacade.thumbnailHeight + 20}px;
+
+/* 	border: 1px solid green; */
+}
+
+.file-wrapper .caption-wrapper {
+	font-family: PT Serif;
+	color: #FFF;
+/* 	text-shadow: 0 0 2px rgba(0, 0, 0, .8); */
+	text-align: center;
+	font-size: 14px;
+	height: 80px;
+	overflow: hidden;
+
+/* 	border: 1px solid blue; */
+}
+
+.file-wrapper .icon-wrapper .fa,
+.file-wrapper .icon-wrapper IMG {
+	display: block;
+/* 	color: #FFF; */
+	text-align: center;
+/* 	text-shadow: 0 0 2px rgba(0, 0, 0, .8); */
+	height: 100%;
+	font-size: #{configurationFacade.thumbnailHeight}px;
+	
+/*  	border: 1px solid black; */
+}
+
+.file-wrapper .command {
+	font-size: 20px;
+}
+
+.file-wrapper .caption-wrapper A {
+}
+
+.file-wrapper .caption-wrapper A,
+.file-wrapper .caption-wrapper A:link,
+.file-wrapper .caption-wrapper A:hover, .file-wrapper .caption-wrapper A:active,
+	.file-wrapper .caption-wrapper A:visited {
+/* 	color: #FFF; */
+	text-decoration: inherit;
+}
+
+.file-wrapper .caption-wrapper A:hover {
+	color: #007cc2;
+}
+
+.file-wrapper .icon-wrapper IMG {
+	
+}
