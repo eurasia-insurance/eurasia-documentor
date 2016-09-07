@@ -29,7 +29,7 @@ public class DefaultUploadedFileDAO extends DefaultGenericDAO<Integer, UploadedF
 
     @Override
     @TransactionAttribute(TransactionAttributeType.SUPPORTS)
-    public List<UploadedFile> findByIdNumber(SearchParameters parameters) throws DAOException {
+    public List<UploadedFile> findBySerachParameters(SearchParameters parameters) throws DAOException {
 	try {
 	    CriteriaBuilder cb = em.getCriteriaBuilder();
 	    CriteriaQuery<UploadedFile> cq = cb.createQuery(entityClass);

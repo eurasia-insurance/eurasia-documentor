@@ -45,7 +45,7 @@ public class DefaultDocumentPackageDAO extends DefaultGenericDAO<Integer, Docume
 
     @Override
     @TransactionAttribute(TransactionAttributeType.SUPPORTS)
-    public List<DocumentPackage> findByIdNumber(SearchParameters parameters) throws DAOException {
+    public List<DocumentPackage> findBySerachParameters(SearchParameters parameters) throws DAOException {
 	try {
 	    CriteriaBuilder cb = em.getCriteriaBuilder();
 	    CriteriaQuery<DocumentPackage> cq = cb.createQuery(entityClass);
