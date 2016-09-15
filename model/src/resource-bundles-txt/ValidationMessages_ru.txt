@@ -1,0 +1,1 @@
+kz.theeurasia.documentor.model.DocumentPackage.idNumber.NotNull.message = ИИН обязательное поле

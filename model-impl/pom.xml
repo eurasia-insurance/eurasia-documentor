@@ -23,12 +23,6 @@
 		</dependency>
 		<!-- internal -->
 		<dependency>
-			<groupId>com.lapsa.insurance-lib</groupId>
-			<artifactId>insurance-validation</artifactId>
-			<scope>compile</scope>
-			<optional>false</optional>
-		</dependency>
-		<dependency>
 			<groupId>com.lapsa.kz-lib</groupId>
 			<artifactId>kz-eelib</artifactId>
 			<scope>compile</scope>

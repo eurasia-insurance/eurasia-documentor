@@ -3,16 +3,17 @@ package kz.theeurasia.documentor.model;
 import java.util.Date;
 import java.util.List;
 
-import com.lapsa.insurance.validation.NotNullValue;
+import javax.validation.constraints.NotNull;
+
 import com.lapsa.kz.idnumber.validators.ValidIdNumber;
 
 public class DocumentPackage extends GenericEntity<Integer> {
 
-    @NotNullValue
+    @NotNull(message = "{kz.theeurasia.documentor.model.DocumentPackage.idNumber.NotNull.message}")
     @ValidIdNumber
     private String idNumber;
 
-    @NotNullValue
+    @NotNull
     private Date created;
 
     private List<UploadedFile> uploadedFiles;

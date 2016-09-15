@@ -1,12 +1,12 @@
 package kz.theeurasia.documentor.beans.holder.pojo;
 
-import com.lapsa.insurance.validation.NotNullValue;
+import javax.validation.constraints.NotNull;
 
 import kz.theeurasia.documentor.api.dao.SearchParameters;
 
 public class DefaultSearchParameters implements SearchParameters {
 
-    @NotNullValue
+    @NotNull(message = "{kz.theeurasia.documentor.beans.holder.pojo.DefaultSearchParameters.idNumberPattern.NotNull.message}")
     private String idNumberPattern;
 
     private String fileNamePattern;

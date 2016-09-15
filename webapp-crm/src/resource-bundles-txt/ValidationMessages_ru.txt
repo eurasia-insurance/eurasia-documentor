@@ -1,0 +1,1 @@
+kz.theeurasia.documentor.beans.holder.pojo.DefaultSearchParameters.idNumberPattern.NotNull.message = ИИН обязательное поле
