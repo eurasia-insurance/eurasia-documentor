@@ -146,14 +146,14 @@
 	</organization>
 
 	<scm>
-		<connection>scm:git:https://gitrepo.theeurasia.kz/eurasia/documentor.git</connection>
-		<developerConnection>scm:git:https://gitrepo.theeurasia.kz/eurasia/documentor.git</developerConnection>
+		<connection>scm:git:http://gitlab.lapsa.tech/eurasia/documentor.git</connection>
+		<developerConnection>scm:git:http://gitlab.lapsa.tech/eurasia/documentor.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 
 	<issueManagement>
 		<system>gitlab</system>
-		<url>https://gitrepo.theeurasia.kz/eurasia/documentor/issues</url>
+		<url>http://gitlab.lapsa.tech/eurasia/documentor/issues</url>
 	</issueManagement>
 
 </project>
