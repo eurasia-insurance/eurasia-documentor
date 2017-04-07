@@ -148,7 +148,7 @@
 	<scm>
 		<connection>scm:git:https://gitrepo.theeurasia.kz/eurasia/documentor.git</connection>
 		<developerConnection>scm:git:https://gitrepo.theeurasia.kz/eurasia/documentor.git</developerConnection>
-		<tag>v1.0</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<issueManagement>
