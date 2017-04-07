@@ -12,7 +12,7 @@ command.go-home-page = На главную
 label.id-number = Ваш ИИН
 
 # placeholders
-placeholder.id-number = Введите Ваш ИИН
+placeholder.id-number = Введите Ваш ИИН состоящий из 12-цифр
 
 # texts
 text.wait = Подождите...
