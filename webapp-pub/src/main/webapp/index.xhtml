@@ -22,14 +22,12 @@
 
 			<h:panelGroup styleClass="row form-group">
 				<p:outputLabel value="#{ui['label.id-number']}" for="idNumber" />
-				<p:inputMask id="idNumber" value="#{documentPackage.value.idNumber}"
-					mask="999 999 999 999" slotChar="&#9679;"
+				<p:inputText id="idNumber" value="#{documentPackage.value.idNumber}"
 					placeholder="#{ui['placeholder.id-number']}"
-					title="#{componentFacade.messagesFor(component)}">
-					<f:converter converterId="idNumber.inputMask.converter" />
+					title="#{componentFacade.messagesFor(component)}" maxlength="12">
 					<pe:keyFilter regEx="/[0123456789]/i" preventPaste="false" />
 					<p:ajax process="@this" update="@this" />
-				</p:inputMask>
+				</p:inputText>
 			</h:panelGroup>
 
 			<h:panelGroup styleClass="row form-group">
