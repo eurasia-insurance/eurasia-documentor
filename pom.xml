@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>com.lapsa.maven.pom</groupId>
 		<artifactId>javaee7-app-parent</artifactId>
-		<version>1.3.4</version>
+		<version>2.0</version>
 	</parent>
 
 	<groupId>kz.theeurasia.documentor</groupId>
@@ -28,8 +28,8 @@
 		<!-- UTILs -->
 		<font-awesome-lib.version>4.6.1</font-awesome-lib.version>
 		<!-- APIs -->
-		<kz-lib.version>2.1</kz-lib.version>
-		<lapsa-lib.version>1.1</lapsa-lib.version>
+		<kz-lib.version>2.3.1</kz-lib.version>
+		<lapsa-lib.version>1.2.2</lapsa-lib.version>
 		<esbd-lib.version>3.0</esbd-lib.version>
 		<image-lib.version>1.1</image-lib.version>
 		<!-- EJBs & WARs -->
@@ -128,32 +128,20 @@
 		</dependencies>
 	</dependencyManagement>
 
-	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>com.samaxes.maven</groupId>
-					<artifactId>minify-maven-plugin</artifactId>
-					<version>1.7.4</version>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-	</build>
-
 	<organization>
 		<name>Eurasia Insurance Company</name>
 		<url>http://www.theeurasia.kz</url>
 	</organization>
 
 	<scm>
-		<connection>scm:git:https://gitrepo.theeurasia.kz/eurasia/documentor.git</connection>
-		<developerConnection>scm:git:https://gitrepo.theeurasia.kz/eurasia/documentor.git</developerConnection>
+		<connection>scm:git:http://gitlab.lapsa.tech/eurasia/documentor.git</connection>
+		<developerConnection>scm:git:http://gitlab.lapsa.tech/eurasia/documentor.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 
 	<issueManagement>
 		<system>gitlab</system>
-		<url>https://gitrepo.theeurasia.kz/eurasia/documentor/issues</url>
+		<url>http://gitlab.lapsa.tech/eurasia/documentor/issues</url>
 	</issueManagement>
 
 </project>
