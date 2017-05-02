@@ -30,7 +30,6 @@
 		<!-- APIs -->
 		<kz-lib.version>3.0-SNAPSHOT</kz-lib.version>
 		<lapsa-lib.version>2.0-SNAPSHOT</lapsa-lib.version>
-		<esbd-lib.version>3.0</esbd-lib.version>
 		<image-lib.version>1.1</image-lib.version>
 		<!-- EJBs & WARs -->
 	</properties>
